@@ -80,9 +80,7 @@ namespace Lab4_GraphEditor
         {
             CalculationPresenter = new CalculationPresenter(new Calculation(), this);
 
-            CoordinatesGridView.Rows.Clear();
-
-            // Проверка ввода в поля
+            // проверка ввода в поля
             if (CheckFields())
             {
                 CalculationPresenter.GetCells
@@ -91,6 +89,8 @@ namespace Lab4_GraphEditor
                         Convert.ToDouble(RightBorderTextBox.Text),
                         Convert.ToDouble(StepTextBox.Text)
                     );
+
+                CoordinatesGridView.Rows.Clear();
             }
         }
 

@@ -37,6 +37,7 @@ namespace Lab4_GraphEditor.Presenter
                 var result = FileManager.GetContent();
                 View.ClearAll();
                 View.UpdateTable(result);
+                View.UpdateChart();
             }
             catch { }
         }
