@@ -63,6 +63,8 @@ namespace Lab4_GraphEditor
                 {
                     if (e.KeyChar == '-')
                         e.Handled = false;
+                    else if (!char.IsDigit(e.KeyChar))
+                        e.Handled = true;
                 }
                 else if (ViewHelper.CanInput(e))
                 {
@@ -83,14 +85,13 @@ namespace Lab4_GraphEditor
             // проверка ввода в поля
             if (CheckFields())
             {
+                CoordinatesGridView.Rows.Clear();
                 CalculationPresenter.GetCells
                     (
                         Convert.ToDouble(LeftBorderTextBox.Text),
                         Convert.ToDouble(RightBorderTextBox.Text),
                         Convert.ToDouble(StepTextBox.Text)
                     );
-
-                CoordinatesGridView.Rows.Clear();
             }
         }
 
@@ -375,7 +376,5 @@ namespace Lab4_GraphEditor
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
-
-        
     }
 }

@@ -36,6 +36,7 @@ namespace Lab4_GraphEditor
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UploadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveCalcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GraphModeComboBox = new System.Windows.Forms.ComboBox();
             this.GraphVisulizerChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.CoordinatesGridView = new System.Windows.Forms.DataGridView();
@@ -51,7 +52,6 @@ namespace Lab4_GraphEditor
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GraphVisulizerChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoordinatesGridView)).BeginInit();
@@ -92,12 +92,18 @@ namespace Lab4_GraphEditor
             this.SaveCalcToolStripMenuItem.Text = "Сохранить расчеты";
             this.SaveCalcToolStripMenuItem.Click += new System.EventHandler(this.SaveCalcToolStripMenuItem_Click);
             // 
+            // AboutToolStripMenuItem
+            // 
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.AboutToolStripMenuItem.Text = "О программе";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
             // GraphModeComboBox
             // 
             this.GraphModeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.GraphModeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GraphModeComboBox.FormattingEnabled = true;
             this.GraphModeComboBox.Location = new System.Drawing.Point(12, 27);
             this.GraphModeComboBox.Name = "GraphModeComboBox";
             this.GraphModeComboBox.Size = new System.Drawing.Size(386, 33);
@@ -130,6 +136,7 @@ namespace Lab4_GraphEditor
             this.ColumnY});
             this.CoordinatesGridView.Location = new System.Drawing.Point(12, 66);
             this.CoordinatesGridView.Name = "CoordinatesGridView";
+            this.CoordinatesGridView.ReadOnly = true;
             this.CoordinatesGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.CoordinatesGridView.Size = new System.Drawing.Size(386, 337);
             this.CoordinatesGridView.TabIndex = 3;
@@ -182,6 +189,7 @@ namespace Lab4_GraphEditor
             this.LeftBorderTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LeftBorderTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LeftBorderTextBox.Location = new System.Drawing.Point(404, 429);
+            this.LeftBorderTextBox.MaxLength = 8;
             this.LeftBorderTextBox.Name = "LeftBorderTextBox";
             this.LeftBorderTextBox.Size = new System.Drawing.Size(130, 31);
             this.LeftBorderTextBox.TabIndex = 6;
@@ -193,6 +201,7 @@ namespace Lab4_GraphEditor
             this.RightBorderTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RightBorderTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RightBorderTextBox.Location = new System.Drawing.Point(540, 429);
+            this.RightBorderTextBox.MaxLength = 8;
             this.RightBorderTextBox.Name = "RightBorderTextBox";
             this.RightBorderTextBox.Size = new System.Drawing.Size(117, 31);
             this.RightBorderTextBox.TabIndex = 7;
@@ -204,6 +213,7 @@ namespace Lab4_GraphEditor
             this.StepTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StepTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StepTextBox.Location = new System.Drawing.Point(663, 429);
+            this.StepTextBox.MaxLength = 8;
             this.StepTextBox.Name = "StepTextBox";
             this.StepTextBox.Size = new System.Drawing.Size(125, 31);
             this.StepTextBox.TabIndex = 8;
@@ -241,13 +251,6 @@ namespace Lab4_GraphEditor
             this.label3.Size = new System.Drawing.Size(32, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Шаг";
-            // 
-            // AboutToolStripMenuItem
-            // 
-            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.AboutToolStripMenuItem.Text = "О программе";
-            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // GraphView
             // 
