@@ -16,7 +16,7 @@ namespace Lab4_GraphEditor.Model
         // Метод подсчета координаты Y
         private double Expression()
         {
-            return 2 * Math.Sin(CoordinateX / 3);
+            return Math.Tan(Math.Abs(CoordinateX/2));
         }
     }
 }

@@ -57,7 +57,12 @@ namespace Lab4_GraphEditor
         {
             TextBox textBox = (TextBox)sender;
 
-            if (!ViewHelper.HasMinus(textBox.Text))
+            if (ViewHelper.HasComma(textBox.Text))
+            {
+                if (e.KeyChar == ',')
+                    e.Handled = true;
+            }
+            else if (!ViewHelper.HasMinus(textBox.Text))
             {
                 if (ViewHelper.CanInputMinus(textBox.Text, textBox.Name))
                 {
@@ -177,6 +182,9 @@ namespace Lab4_GraphEditor
                 StepTextBox,
             };
 
+            double left_border = Convert.ToDouble(LeftBorderTextBox.Text);
+            double right_border = Convert.ToDouble(RightBorderTextBox.Text);
+
             for (int i = 0; i < text_to_check.Length; i++)
             {
                 if (text_to_check[i].Text.StartsWith(",") || text_to_check[i].Text.Trim() == "")
@@ -184,6 +192,13 @@ namespace Lab4_GraphEditor
                     _ = SelectText(text_to_check[i]);
                     flag = false;
                 }
+            }
+
+            if (left_border >= right_border)
+            {
+                _ = SelectText(LeftBorderTextBox);
+                _ = SelectText(RightBorderTextBox);
+                flag = false;
             }
 
             return flag;

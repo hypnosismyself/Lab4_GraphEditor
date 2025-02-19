@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Linq;
+using System.Windows.Forms;
 
 namespace Lab4_GraphEditor.View
 {
@@ -42,6 +43,11 @@ namespace Lab4_GraphEditor.View
                 return true;
 
             return false;
+        }
+
+        public bool HasComma(string text)
+        {
+            return text.Contains(",");
         }
     }
 }
