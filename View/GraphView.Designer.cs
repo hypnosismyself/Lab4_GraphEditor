@@ -42,8 +42,8 @@ namespace Lab4_GraphEditor
             this.CoordinatesGridView = new System.Windows.Forms.DataGridView();
             this.ColumnX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ExecuteButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.LeftBorderTextBox = new System.Windows.Forms.TextBox();
@@ -155,9 +155,9 @@ namespace Lab4_GraphEditor
             this.ColumnY.ReadOnly = true;
             this.ColumnY.Width = 160;
             // 
-            // openFileDialog1
+            // OpenFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.OpenFileDialog.FileName = "openFileDialog1";
             // 
             // ExecuteButton
             // 
@@ -289,8 +289,8 @@ namespace Lab4_GraphEditor
         private System.Windows.Forms.ComboBox GraphModeComboBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart GraphVisulizerChart;
         private System.Windows.Forms.DataGridView CoordinatesGridView;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog;
+        private System.Windows.Forms.SaveFileDialog SaveFileDialog;
         private System.Windows.Forms.ToolStripMenuItem UploadDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveCalcToolStripMenuItem;
         private System.Windows.Forms.Button ExecuteButton;

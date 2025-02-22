@@ -35,6 +35,19 @@ namespace Lab4_GraphEditor
         public GraphView()
         {
             InitializeComponent();
+
+            // инициализация диалога открытия
+            OpenFileDialog.InitialDirectory = "c:\\";
+            OpenFileDialog.Filter = _FILE_FILTER;
+            OpenFileDialog.RestoreDirectory = false;
+
+            // инициализация диалога сохранения файла
+            SaveFileDialog.Title = "Сохранить как";
+            SaveFileDialog.InitialDirectory = "c:\\";
+            SaveFileDialog.Filter = _FILE_FILTER;
+            SaveFileDialog.RestoreDirectory = false;
+            SaveFileDialog.OverwritePrompt = true;
+            SaveFileDialog.FileName = "Точки построения.csv";
         }
 
         // Обработчики событий формы
@@ -91,12 +104,12 @@ namespace Lab4_GraphEditor
             if (CheckFields())
             {
                 CoordinatesGridView.Rows.Clear();
-                CalculationPresenter.GetCells
-                    (
+
+                // запрашиваем ячейки
+                CalculationPresenter.GetCells(
                         Convert.ToDouble(LeftBorderTextBox.Text),
                         Convert.ToDouble(RightBorderTextBox.Text),
-                        Convert.ToDouble(StepTextBox.Text)
-                    );
+                        Convert.ToDouble(StepTextBox.Text));
             }
         }
 
@@ -209,14 +222,6 @@ namespace Lab4_GraphEditor
         {
             FilePresenter = new FileManagerPresenter(new FileManager(), this);
 
-            // инициализация диалога открытия
-            OpenFileDialog OpenFileDialog = new OpenFileDialog
-            {
-                InitialDirectory = "c:\\",
-                Filter = _FILE_FILTER,
-                RestoreDirectory = false
-            };
-
             using (OpenFileDialog)
             {
                 if (OpenFileDialog.ShowDialog() == DialogResult.OK)
@@ -303,11 +308,9 @@ namespace Lab4_GraphEditor
 
             for (int i = 0; i < CoordinatesGridView.RowCount - 1; i++)
             {
-                SeriaPoints.Points.AddXY
-                    (
+                SeriaPoints.Points.AddXY(
                         CoordinatesGridView[0, i].Value,
-                        CoordinatesGridView[1, i].Value
-                    );
+                        CoordinatesGridView[1, i].Value);
             }
 
             // добавляем созданный набор точек в Chart
@@ -319,17 +322,6 @@ namespace Lab4_GraphEditor
         {
             string temp_path;
             FilePresenter = new FileManagerPresenter(new FileManager(), this);
-
-            // инициализация диалога сохранения файла
-            SaveFileDialog SaveFileDialog = new SaveFileDialog
-            {
-                Title = "Сохранить как",
-                InitialDirectory = "c:\\",
-                Filter = _FILE_FILTER,
-                RestoreDirectory = false,
-                OverwritePrompt = true,
-                FileName = "Точки построения.csv"
-            };
 
             using (SaveFileDialog)
             {
