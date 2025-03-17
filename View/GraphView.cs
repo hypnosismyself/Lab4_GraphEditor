@@ -195,17 +195,18 @@ namespace Lab4_GraphEditor
                 StepTextBox,
             };
 
-            double left_border = Convert.ToDouble(LeftBorderTextBox.Text);
-            double right_border = Convert.ToDouble(RightBorderTextBox.Text);
-
             for (int i = 0; i < text_to_check.Length; i++)
             {
                 if (text_to_check[i].Text.StartsWith(",") || text_to_check[i].Text.Trim() == "")
                 {
                     _ = SelectText(text_to_check[i]);
                     flag = false;
+                    return flag; 
                 }
             }
+
+            double left_border = Convert.ToDouble(LeftBorderTextBox.Text);
+            double right_border = Convert.ToDouble(RightBorderTextBox.Text);
 
             if (left_border >= right_border)
             {
